@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+	
+	<ui:define name="content">
+	<h:form id="personForm">
+	<rich:panel>
+        <f:facet name="header">
+            <h:outputText value="#{msg.labelTop}"></h:outputText>
+        </f:facet>
+        
+        <h:panelGrid columns="2">
+            <h:outputText value="#{msg.personFirstNameLabel}" />
+            <rich:inplaceInput defaultLabel="nacisnij aby podać imię" id="name" value="#{personBean.person.firstName}"/>
+            
+            <h:outputText value="#{msg.personSecondNameLabel}" />
+            <rich:inplaceInput defaultLabel="nacisnij aby podać nazwisko" id="sname" value="#{personBean.person.secondName}"/>
+        
+            
+            <h:outputText value="Wiek:" />
+            <rich:inputNumberSlider value="18" maxValue="130" step="1" showArrows="true"/> 
+            
+            
+            <h:commandButton value="#{msg.personFormOKButton}"
+					action="#{personBean.addPerson}" />
+            </h:panelGrid>
+            
+       
+    </rich:panel>
+    </h:form>
+    </ui:define>
+</ui:composition>
