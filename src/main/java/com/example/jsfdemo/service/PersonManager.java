@@ -21,6 +21,8 @@ public class PersonManager {
 		newPerson.setMarried(person.isMarried());
 		newPerson.setWeight(person.getWeight());
 		newPerson.setNumOfChildren(person.getNumOfChildren());
+		newPerson.setOld(person.getOld());
+		newPerson.setSecondName(person.getSecondName());
 
 		db.add(newPerson);
 	}

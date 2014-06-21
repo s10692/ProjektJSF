@@ -3,8 +3,19 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
 	template="/templates/default.xhtml">
 	<ui:define name="content">
+
 		<p>#{msg.applicationInfo}</p>
+	<p:clock pattern="HH:mm:ss dd.MM.yyyy" mode="server" />
+    
+    <h:form>
+    		<h3>Welcome #{loginBean.username}</h3>
+    		<br/>
+    		<br/>
+    		<h:commandLink action="#{loginBean.doLogout}" value="Logout"/>
+    	</h:form>
+	
 	</ui:define>
 </ui:composition>

@@ -49,6 +49,9 @@
 					<h:outputText value="#{msg.personDobLabel}" />
 					<h:outputText id="dobOutput"
 						value="#{personBean.person.dateOfBirth}" />
+						
+					<h:commandButton value="#{msg.personFormOKButton}"
+					action="#{personBean.addPerson}" />
 
 				</h:panelGrid>
 			</a4j:outputPanel>
